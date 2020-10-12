@@ -9,6 +9,8 @@ import sys
 import pygame
 import math
 from queue import PriorityQueue
+from flask import Flask
+
 
 # initializing pygame
 pygame.init()
@@ -92,10 +94,6 @@ class Node:
     def draw(self, screen):
         pygame.draw.rect(screen, self.initColor, (self.xAxis,
                                                   self.yAxis, self.widthOfNode, self.widthOfNode))
-
-    def draw(self, screen):
-
-        pass
 
     def updateNeighbourNodes(self, grid):
         pass

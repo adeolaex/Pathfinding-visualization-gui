@@ -1,17 +1,12 @@
 
 
-# @author Kola-Olaleye Adeola
-#
-#
-
-
-import sys
-import pygame
-import math
 from queue import PriorityQueue
-from flask import Flask
+import math
+import pygame
+import sys
 
 
+# @author Kola-Olaleye Adeola
 # initializing pygame
 pygame.init()
 
@@ -100,3 +95,20 @@ class Node:
 
     def __lt__(self, value):
         return False
+
+# from flask import Flask
+# from urllib import request, response
+
+# app = Flask(__name__)
+
+
+# @app.route("/")
+# def javaApp():
+
+#     with request.urlopen("http://localhost:8080/translate/password/en/hu") as body:
+#         readBody = body.read(100)
+#     return readBody
+
+
+# if __name__ == "__main__":
+#     app.run()

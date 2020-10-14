@@ -117,3 +117,26 @@ def makeGrid(rows, width):
             grid[row].append()(Node)
 
     return grid
+
+
+def drawGridLines(screen, width, rows):
+    widthOfEachNode = width // rows
+    for row in range(rows):
+        pygame.draw.line(
+            screen, colors["grey"], (0, row*widthOfEachNode), (width, row*widthOfEachNode))
+        for col in range(rows):
+            pygame.draw.line(
+                screen, colors["grey"], (col*widthOfEachNode, 0), (width, col*widthOfEachNode))
+
+
+def render(screen, grid, rows, width):
+
+    # fills the whole screen with color white
+    screen.fill(colors["white"])
+
+    for row in grid:
+        for Node in row:
+            Node.draw(screen)
+
+    drawGridLines(screen, width, rows)
+    pygame.display.update()

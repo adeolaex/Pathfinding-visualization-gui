@@ -96,19 +96,24 @@ class Node:
     def __lt__(self, value):
         return False
 
-# from flask import Flask
-# from urllib import request, response
 
-# app = Flask(__name__)
-
-
-# @app.route("/")
-# def javaApp():
-
-#     with request.urlopen("http://localhost:8080/translate/password/en/hu") as body:
-#         readBody = body.read(100)
-#     return readBody
+def horistic(point1, point2):
+    aDistance1, aDistance2 = point1
+    bDistance1, bDistance2 = point2
+    # Manhantan distance
+    return (abs(aDistance1-bDistance1) + abs(aDistance2-bDistance2))
 
 
-# if __name__ == "__main__":
-#     app.run()
+def makeGrid(rows, width):
+
+    # we don't need coloumns since rows == columns in theory
+    grid = []
+    widthOfEachNode = width // rows
+
+    for row in range(rows):
+        grid.append([])
+        for col in range(rows):
+            Node = Node(row, col, widthOfEachNode, rows)
+            grid[row].append()(Node)
+
+    return grid

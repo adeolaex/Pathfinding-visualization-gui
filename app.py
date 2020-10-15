@@ -4,7 +4,7 @@ from queue import PriorityQueue
 import math
 import pygame
 import sys
-
+from flask import Flask
 
 # @author Kola-Olaleye Adeola
 # initializing pygame
@@ -16,8 +16,8 @@ screen = pygame.display.set_mode(size)
 pygame.display.set_caption("Path Finding Visualization")
 
 # a dict that contains all the colors used to denote the current state of each node
-colors = {"red": (255, 0, 0), "green": (0, 255, 0),  "black": (0, 0, 0), "purple": (128, 0, 128),  "blue": (
-    0, 255, 0), "yellow": (255, 255, 0), "white": (255, 255, 255), "orange": (255, 165, 0),  "grey": (128, 128, 128), "turquoise": (64, 224, 208), }
+colors = {"red": (255, 0, 0), "green": (0, 255, 0), "black": (0, 0, 0), "purple": (128, 0, 128), "blue": (
+    0, 255, 0), "yellow": (255, 255, 0), "white": (255, 255, 255), "orange": (255, 165, 0), "grey": (128, 128, 128), "turquoise": (64, 224, 208), }
 
 # Nodes are used to represent a head. Moving from one Node to another results in a path
 
@@ -27,7 +27,7 @@ class Node:
     # define properties of a Node
     # since the class can be called multiple times each Node will have it's own unique properties
 
-    def __init__(self, rowOfNode,  colOfNode, widthOfNode, totalRows):
+    def __init__(self, rowOfNode, colOfNode, widthOfNode, totalRows):
         self.rowOfNode = rowOfNode
         self.colOfNode = colOfNode
         self.xAxis = rowOfNode * widthOfNode
@@ -101,7 +101,7 @@ def horistic(point1, point2):
     aDistance1, aDistance2 = point1
     bDistance1, bDistance2 = point2
     # Manhantan distance
-    return (abs(aDistance1-bDistance1) + abs(aDistance2-bDistance2))
+    return (abs(aDistance1 - bDistance1) + abs(aDistance2 - bDistance2))
 
 
 def makeGrid(rows, width):
@@ -123,10 +123,10 @@ def drawGridLines(screen, width, rows):
     widthOfEachNode = width // rows
     for row in range(rows):
         pygame.draw.line(
-            screen, colors["grey"], (0, row*widthOfEachNode), (width, row*widthOfEachNode))
+            screen, colors["grey"], (0, row * widthOfEachNode), (width, row * widthOfEachNode))
         for col in range(rows):
             pygame.draw.line(
-                screen, colors["grey"], (col*widthOfEachNode, 0), (width, col*widthOfEachNode))
+                screen, colors["grey"], (col * widthOfEachNode, 0), (width, col * widthOfEachNode))
 
 
 def render(screen, grid, rows, width):

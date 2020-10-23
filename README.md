@@ -31,5 +31,7 @@ If you want to chat join my offical Discord Server below:
 
 <br/>
 
+[discord]: https://discord.gg/cHMRBNT
+
   
 

@@ -1,8 +1,7 @@
 from queue import PriorityQueue
-import math
 import pygame
-import sys
 from flask import Flask
+
 
 # @author Kola-Olaleye Adeola
 # initializing pygame
@@ -74,25 +73,25 @@ class Node:
     def resetNodeColor(self):
         self.initColor == colors["white"]
 
-    # this set of functions below are responsible int assigning colors to each Node
+    # this set of functions below are responsible in assigning colors to each Node
 
     def makeNodeClose(self):
-        self.initColor == colors["red"]
+        self.initColor = colors["red"]
 
     def makeNodeOpen(self):
-        self.initColor == colors["green"]
+        self.initColor = colors["green"]
 
     def makeNodeBlocked(self):
-        self.initColor == colors["black"]
+        self.initColor = colors["black"]
 
     # def makeNodeStart(self):
-    #     self.initColor == colors["blue"]
+    #     self.initColor = colors["blue"]
 
     def makeNodeEnd(self):
-        self.initColor == colors["turquoise"]
+        self.initColor = colors["turquoise"]
 
     def makePath(self):
-        self.initColor == colors["purple"]
+        self.initColor = colors["purple"]
 
     def draw(self, screen):
         pygame.draw.rect(

@@ -19,7 +19,7 @@ This is a simple gui of popular path finding algorithms written entirely with py
 
 *  [An overview of the A * Pathfnding article](https://medium.com/@karlmatthes/pathfinding-a-search-algorithm-d77400c89888)
 
-*  [A video break-down](https://www.youtube.com/watch?v=JtiK0DOeI4A&t=2688s)
+
 
   
   
